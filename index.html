@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Parameter Display</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #display {
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="display">
+        <!-- JavaScript will display the query parameter here -->
+    </div>
+
+    <script>
+        // JavaScript code to get and display the query parameter
+        window.onload = function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const parameter = urlParams.get('q');
+
+            // Check if the parameter is a 4-digit number
+            if (/^\d{4}$/.test(parameter)) {
+                document.getElementById('display').textContent = parameter;
+            } else {
+                document.getElementById('display').textContent = 'Invalid Parameter';
+            }
+
+            // function getQueryParameters() {
+            // const queryString = window.location.search;
+            // const urlParams = new URLSearchParams(queryString);
+            // const params = {};
+            
+            // for (const [key, value] of urlParams.entries()) {
+            //         params[key] = value;
+            //     }
+                
+            //     return params;
+            // }
+
+            // Defina aqui a nova URL
+            // const targetUrl = 'https://example.com';
+
+            // Pegue os parametros de query que foram passados para esta pagina
+            // const queryParams = getQueryParameters();
+
+            // Cria a nova URL usando a constante "targetUrl"
+            // const redirectUrl = new URL(targetUrl);
+
+            // for (const key in queryParams) {
+            //     if (queryParams.hasOwnProperty(key)) {
+            //         redirectUrl.searchParams.set(key, queryParams[key]);
+            //     }
+            // }
+
+            // Redireciona para a nova URL
+            // window.location.href = redirectUrl.toString();
+            };
+    </script>
+</body>
+</html>
