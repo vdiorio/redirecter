@@ -52,7 +52,7 @@
 
             for (const key in queryParams) {
                 if (queryParams.hasOwnProperty(key)) {
-                    redirectUrl.searchParams.set('id', queryParams[key]);
+                    redirectUrl.searchParams.set(key, queryParams[key]);
                 }
             }
             
