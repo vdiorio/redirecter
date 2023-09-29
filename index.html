@@ -36,35 +36,31 @@
                 document.getElementById('display').textContent = 'Invalid Parameter';
             }
 
-            // function getQueryParameters() {
-            // const queryString = window.location.search;
-            // const urlParams = new URLSearchParams(queryString);
-            // const params = {};
+            function getQueryParameters() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const params = {};
             
-            // for (const [key, value] of urlParams.entries()) {
-            //         params[key] = value;
-            //     }
+            for (const [key, value] of urlParams.entries()) {
+                    params[key] = value;
+                }
                 
-            //     return params;
-            // }
+                return params;
+            }
 
-            // Defina aqui a nova URL
-            // const targetUrl = 'https://example.com';
+            const targetUrl = 'https://rock-bar-front-hhtw9im3n-vdiorio.vercel.app';
 
-            // Pegue os parametros de query que foram passados para esta pagina
-            // const queryParams = getQueryParameters();
+            const queryParams = getQueryParameters();
 
-            // Cria a nova URL usando a constante "targetUrl"
-            // const redirectUrl = new URL(targetUrl);
+            const redirectUrl = new URL(targetUrl);
 
-            // for (const key in queryParams) {
-            //     if (queryParams.hasOwnProperty(key)) {
-            //         redirectUrl.searchParams.set(key, queryParams[key]);
-            //     }
-            // }
-
-            // Redireciona para a nova URL
-            // window.location.href = redirectUrl.toString();
+            for (const key in queryParams) {
+                if (queryParams.hasOwnProperty(key)) {
+                    redirectUrl.searchParams.set(key, queryParams[key]);
+                }
+            }
+            
+            window.location.href = redirectUrl.toString();
             };
     </script>
 </body>
