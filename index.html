@@ -22,16 +22,6 @@
     <script>
         // JavaScript code to get and display the query parameter
         window.onload = function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const parameter = urlParams.get('q');
-
-            // Check if the parameter is a 4-digit number
-            if (/^\d{4}$/.test(parameter)) {
-                document.getElementById('display').textContent = parameter;
-            } else {
-                document.getElementById('display').textContent = 'Invalid Parameter';
-            }
-
             function getQueryParameters() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
